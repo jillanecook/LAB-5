@@ -16,8 +16,13 @@ namespace LAB_5
                 Console.WriteLine("Welcome to the Grand Circus Casino!");
                 Console.WriteLine("How many sides does your die have?");
                 int d = int.Parse(Console.ReadLine());
-
-                Random rng = new Random();
+                {
+                    GenerateRandomNumber(d);
+                }
+               
+            int GenerateRandomNumber(int i)
+                {
+                 Random rng = new Random();
 
                 Console.WriteLine("Roll 1:");
                 Console.WriteLine(rng.Next(1, d++));
@@ -27,7 +32,11 @@ namespace LAB_5
                 Console.WriteLine(rng.Next(1, d++));
                 Console.WriteLine("Roll 4:");
                 Console.WriteLine(rng.Next(1, d++));
-            } while (Continue() == true);
+
+                    return d;
+                }
+
+} while (Continue() == true);
 
         }
         public static Boolean Continue()
